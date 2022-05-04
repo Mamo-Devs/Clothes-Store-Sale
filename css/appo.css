@@ -1,0 +1,984 @@
+/* Start Of Variables */
+ :root {
+    --section-background-color:#E3E3E3; 
+    --main-color: #e72e36;
+    --gray-color: #E5E7E9;
+    --dark-gray-color: #545B60;
+    --section-padding: 20px; 
+ }
+/* End Of Variables */
+
+/* Start Of Global Rules */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+ }
+
+.container {
+   margin-left: auto;
+   margin-right: auto;
+   padding-left: 15px;
+   padding-right: 15px;
+}
+
+html {
+   scroll-behavior: smooth;
+   overflow-x: hidden;
+}
+
+/* Start Very Small Screens (Mobile Devices) */
+@media (max-width: 767px) {
+    .container {
+        width: 100%;
+    }
+  }
+/* End Very Small Screens (Mobile Devices)  */
+
+/* Start Small Screens */
+ @media (min-width: 768px) {
+   .container {
+       width: 100%;
+   }
+ }
+/* End Small Screens */
+
+/* Start Medium Screens */
+ @media (min-width: 992px) {
+    .container {
+        width: 970px;
+    }
+} 
+/* End Medium Screens */
+
+/* Start Large Screens */
+ @media (min-width: 1200px) {
+    .container {
+        width: 1170px;
+    }
+}
+/* End Large Screens */
+/* End Of Global Rules */
+
+/* Start Of Components (Utilities) */
+.custom-button {
+    min-width: 70px;
+    padding: 10px;
+    display: block;
+    background-color: var(--main-color);
+    border-color: transparent;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    -ms-border-radius: 4px;
+    -o-border-radius: 4px;
+    border-radius: 4px;
+}
+
+.sale-custom-btn {
+   background-color: transparent;
+   padding: 5px;
+   border-top: none;
+   border-right: none;
+   border-bottom: 5px solid #777; 
+   border-left: none;
+   font-family: "Roboto" , sans-serif;
+   font-weight: 400;
+   font-size: 16px;
+   text-transform: uppercase;
+   letter-spacing: 2px;
+}
+
+.sale-custom-btn:hover {
+   border-bottom-color: var(--main-color);
+}
+/* End Of Components (Utilities) */
+
+/* Start Header */
+header {
+    padding: var(--section-padding);
+    width: 100%;
+    height: 72px;
+    color: #BBB;
+}
+
+header .header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .header-container .logo {
+   font-family: 'Open Sans', sans-serif;
+   font-weight: bold;
+   font-size: 25px;
+   letter-spacing: 1px;
+   text-decoration: none;
+   color: #BBB;
+}
+
+header .header-container .links {
+    position: relative;
+    z-index: 1;
+}
+
+header .header-container .links:hover ul {
+   display: block;
+}
+
+header .header-container.links i {
+  font-size: 25px;
+  margin-right: 0;
+}
+
+header .header-container .links ul {
+   background-color: #E5E8E8;
+   list-style-type: none;
+   margin: 0;
+   padding: 0;
+   position: absolute;
+   right: 0;
+   top: calc(100% + 15px);
+   min-width: 200px;
+   display: none;
+}
+
+header .header-container .links ul::before {
+    content: '';
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #E5E8E8 transparent;
+    position: absolute;
+    right: 2.94px;
+    top: -20px;
+}
+
+header .header-container .links ul li a {
+   display: block;
+   padding: 15px;
+   text-decoration: none;
+   letter-spacing: 1px;
+   font-family: 'Open Sans', sans-serif;
+   font-size: 18px;
+   font-weight: 500;
+   color: #444;
+   -webkit-transition: .4s;
+   -moz-transition: .4s;
+   -ms-transition: .4s;
+   -o-transition: .4s;
+   transition: .4s;
+}
+
+header .header-container .links ul li:not(:last-child) a {
+   border-bottom: 2px solid #BDC3C7;
+}
+
+header .header-container .links ul li a:hover {
+   padding-left: 25px;
+}
+/* End Header */
+
+/* Start Landing */
+ .landing {
+      height: calc(100vh - 72px);
+      width: 100%;
+      position: relative;
+      background-image: url('../images/landing-background.jpg');
+      background-size: cover;
+      background-position: 35% 0%;
+ }
+
+ .landing .container .landing-text {
+     width: 500px;
+     padding: 30px;
+     position: absolute;
+     text-align: center;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%,-50%);
+     background-color: #FFF;
+     border-radius: 20px;
+     -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+     -ms-border-radius: 20px;
+     -o-border-radius: 20px;
+     -webkit-transform: translate(-50%,-50%);
+     -moz-transform: translate(-50%,-50%);
+     -ms-transform: translate(-50%,-50%);
+     -o-transform: translate(-50%,-50%);
+}
+
+ .landing .container .landing-text h1:first-child {
+    font-family: 'Abril Fatface', cursive;
+    font-size: 80px;
+    font-weight: bold;
+    line-height: 1.1;
+    text-transform: uppercase;
+    margin: 0;
+ }
+
+ .landing .container .landing-text h1:nth-child(2) {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 45px;
+    margin-top: -15px;
+    line-height: 1.1;
+ }
+
+ .landing .container .landing-text p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-top: -30px;
+    line-height: 1.6;
+    letter-spacing: 1px;
+    color: #777;
+ }
+
+ /* Start For Landscape & Portrait Phones */
+  @media (max-width:576px) {
+   .landing .container .landing-text {
+   width: 70%;
+   padding: 20px;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+   border-radius: 10px;
+   }
+   .landing .container .landing-text h1:first-child {
+      font-size: 12vw;
+      margin: 0;
+   }
+  
+   .landing .container .landing-text h1:nth-child(2) {
+      font-size: 8vw;
+      margin-top: -5px;
+   }
+  
+   .landing .container .landing-text p {
+      margin-top: -20px;
+      font-size: 3vw;
+   }
+  }
+ /* End For Landscape & Portrait Phones */
+
+ /* Start For Foldable Mobile Devices */
+ @media (max-height:350px) {
+   .landing .container .landing-text {
+      padding: 20px;
+   }
+
+   .landing .container .landing-text h1:first-child {
+      font-size: 11vh;
+   }
+  
+   .landing .container .landing-text h1:nth-child(2) {
+      font-size: 8.6vh;
+      margin-top: -4px;
+   }
+  
+   .landing .container .landing-text p {
+     font-size: 2.9vh;
+     margin-top: -16px;
+   }
+  }
+ /* End For Foldable Mobile Devices */
+/* End Landing */ 
+
+/* Start Sale */ 
+ .sale {
+    padding: var(--section-padding);
+    background-color: var(--gray-color);
+ }
+
+ .sale .container {
+   display: flex;
+   align-items: center;
+}
+
+ .sale .container .sale-text {
+    padding: 20px;
+    width: 50%;
+ }
+
+ .sale .container .sale-text h3 {
+    font-family: "Roboto" , sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    text-align: end;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 4px;
+    margin: 0;
+ }
+
+ .sale .container .sale-text h1 {
+   font-family: "Roboto" , sans-serif;
+   font-weight: bold;
+   font-size: 100px;
+   text-align: end;
+   line-height: 0.8;
+   margin-top: 15px;
+   margin-bottom: 5px;
+   color: var(--main-color);
+}
+
+.sale .container .sale-text h2 {
+   font-family: "Roboto" , sans-serif;
+   font-weight: 400;
+   font-size: 30px;
+   text-align: end;
+   text-transform: uppercase;
+   line-height: 1.1;
+   margin-bottom: 30px;
+}
+
+.sale .container .sale-text p {
+   font-family: "Open Sans" , sans-serif;
+   font-weight: 400;
+   font-size: 14px;
+   text-transform: uppercase;
+   line-height: 1.6;
+   letter-spacing: 2px;
+   margin-bottom: 20px;
+}
+
+.sale .container .sale-text .sale-form {
+   display: flex;
+   justify-content: flex-end;
+}
+
+ .sale .container .sale-image {
+   width: 50%;
+   padding: 20px;
+}
+
+.sale .container .sale-image img {
+   max-width: 100%;
+}
+
+/* Start For Landscape & Portrait Phones */
+@media (max-width:576px) {
+   .sale .container {
+     flex-direction: column;
+   }
+
+   .sale .container .sale-text {
+      width: 80%;
+   }
+
+   .sale .container .sale-text h3 {
+      font-size: 6vw;
+   }
+
+   .sale .container .sale-text h1 {
+      font-size: 15vw;
+   }
+
+   .sale .container .sale-text h2 {
+      font-size: 4vw;
+   }
+
+   .sale .container .sale-text p {
+      font-size: 2.5vw;
+   }
+
+   .sale .container .sale-text h3,
+   .sale .container .sale-text h1,
+   .sale .container .sale-text h2,
+   .sale .container .sale-text p
+    {
+      text-align: center;
+    }
+
+ .sale .container .sale-text .sale-form {
+      justify-content: center;
+   }
+
+   .sale .container .sale-image {
+     width: 80%;
+ }
+
+ .sale .container .sale-image img {
+    display: block;
+    margin: 5px auto;
+ }
+}
+ /* End For Landscape & Portrait Phones */
+/* End Sale */ 
+
+/* Start Features */
+ .features {
+    padding: var(--section-padding);
+    background-color: var(--dark-gray-color);
+ }
+
+ .features .container {
+    display: flex;
+ }
+
+ .features .container .feature {
+    padding: 10px;
+ }
+
+ .features .container .feature h1,
+ .features .container .feature h2,
+ .features .container .feature p {
+    width: 80%;
+    margin: 10px auto;
+    color: #FFF;
+ }
+
+ .features .container .feature h1 {
+    font-family: "Roboto",sans-serif;
+    font-size: 100px;
+    line-height: 1.1;
+ }
+
+ .features .container .feature h2 {
+   font-family: "Roboto",sans-serif;
+   font-size: 30px;
+   font-weight: 300;
+   text-transform: uppercase;
+   line-height: 1.1;
+ }
+
+ .features .container .feature h2 span {
+    display: block;
+    font-weight: bold;
+ }
+
+ .features .container .feature p {
+   font-family: "Open Sans",sans-serif;
+   font-size: 14px;
+   font-weight: 400;
+   line-height: 1.6;
+ }
+
+/* Start For Landscape & Portrait Phones */
+ @media (max-width:576px) {
+   .features .container {
+      flex-direction: column;
+   }
+
+   .features .container .feature {
+      margin-bottom: 30px;
+   }
+
+   .features .container .feature h1,
+   .features .container .feature h2,
+   .features .container .feature p {
+    width: 100%;
+    text-align: center;
+ }
+}
+/* End For Landscape & Portrait Phones */
+
+@media (max-width:270px) {
+   .features .container .feature h1 {
+      font-size: 70px;
+   }
+  
+   .features .container .feature h2 {
+     font-size: 22px;
+   }
+  
+   .features .container .feature p {
+     font-size: 14px;
+   }
+}
+/* End Features */
+
+/* Start Inspired Design */
+ .inspired-design {
+   padding: var(--section-padding);
+   background-image: url('../images/inspired-design.jpg');
+   background-position: 45% 0%;
+   background-size: cover;
+   height: 700px;
+   position: relative;
+ }
+
+ .inspired-design::before {
+   position: absolute;
+   content: '';
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.05);
+ }
+
+ .inspired-design .container {
+    position: relative;
+    height: 100%;
+ }
+
+ .inspired-design .container h1 {
+    width: 50%;
+    font-family: "Roboto" , sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: var(--dark-gray-color);
+    line-height: 1.2;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+
+.inspired-design .container h1::before {
+   position: absolute;
+   content: '';
+   border-width: 15px;
+   border-color: var(--main-color) transparent transparent transparent;
+   border-style: solid;
+   left: 30%;
+   top: calc(100% + 15px);
+}
+
+.inspired-design .container h1 span {
+   font-weight: bold;
+}
+
+/* Start For Landscape & Portrait Phones */
+ @media (max-width:576px) {
+   .inspired-design {
+      background-image: none;
+      background-color: var(--gray-color);
+      height: 300px;
+    }
+
+     .inspired-design .container h1 {
+      width: 100%;
+      font-size: 25px;
+      margin: 15px auto;
+      text-align: center;
+      left: 50%;
+      -webkit-transform: translate(-50%,-50%);
+      -moz-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+      -o-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+   }
+
+ .inspired-design .container h1::before {
+   position: absolute;
+   content: '';
+   border-width: 15px;
+   border-color: var(--main-color) transparent transparent transparent;
+   border-style: solid;
+   left: 50%;
+   top: calc(100% + 15px);
+   transform: translateX(-50%);
+   -webkit-transform: translateX(-50%);
+   -moz-transform: translateX(-50%);
+   -ms-transform: translateX(-50%);
+   -o-transform: translateX(-50%);
+    }
+ }
+
+ @media (max-width:270px) {
+   .inspired-design .container h1 {
+      width: 100%;
+      font-size: 20px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%,-50%);
+      -webkit-transform: translate(-50%,-50%);
+      -moz-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+      -o-transform: translate(-50%,-50%);
+}
+  }
+/* End For Landscape & Portrait Phones */
+/* End Inspired Design */
+
+/* Start Follow */
+ .follow {
+    padding: var(--section-padding);
+    height: 170px;
+    background-color: var(--main-color);
+    color: #FFF;
+    position: relative;
+ }
+
+ .follow .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+
+ .follow .container h2 {
+    font-family: "Roboto", sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.1;
+    width: 50%;
+    margin: 10px auto;
+ }
+
+ .follow .container .follow-icons {
+   margin: 10px auto;
+   padding: 10px;
+   width: 50%;
+ }
+
+ .follow .container .follow-icons .icons {
+   margin: 10px auto;
+   padding: 10px;
+   width: fit-content;
+   position: relative;
+ }
+ 
+ .follow .container .follow-icons .icons::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    content: '';
+    width: 65px;
+    height: 5px;
+    background-color: #FFF;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+
+ .follow .container .follow-icons .icons i {
+    margin-right: 10px;
+    font-size: 20px;
+ }
+ /* Start For Portrait Phones */
+  @media (max-width: 576px) {
+   .follow .container h2, 
+   .follow .container .follow-icons {
+      width: 100%;
+    }
+  }
+
+  @media (max-width:270px) {
+   .follow .container h2 {
+      font-size: 25px;
+      width: 100%;
+   }
+     
+   .follow .container .follow-icons .icons i {
+      margin-right: 5px;
+      font-size: 15px;
+    }
+  }
+ /* End For Portrait Phones */
+/* End Follow */
+
+/* Start Advertisement */
+ .advertisement {
+    padding: var(--section-padding);
+    background-image: url('../images/advertisement.jpg');
+    background-size: cover;
+    background-position: 0% 40%;
+    height: 450px;
+    position: relative;
+ }
+
+ .advertisement .container {
+   display: flex;
+   justify-content: center;
+   margin: 10px auto;
+   position: absolute;
+   left: 50%;
+   top: 50%;
+   transform: translate(-50%,-50%);
+   -webkit-transform: translate(-50%,-50%);
+   -moz-transform: translate(-50%,-50%);
+   -ms-transform: translate(-50%,-50%);
+   -o-transform: translate(-50%,-50%);
+}
+
+ .advertisement .container .advertisement-text-01 {
+   padding: 15px;
+   width: 40%;
+   margin-right: 10%;
+   position: relative;
+   height: 350px;
+ }
+
+ .advertisement .container .advertisement-text-01 h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    font-family: "Roboto" , sans-serif;
+    font-size: 80px;
+    text-transform: uppercase;
+    color: #FFF;
+    line-height: 1.1;
+    border: 10px solid #FFF;
+    margin: 0;
+}
+
+.advertisement .container .advertisement-text-01 h1 span {
+   display: block;
+   margin: 5px auto;
+   font-weight: 800;
+}
+
+ .advertisement .container .advertisement-text-02 {
+   padding: 15px;
+   width: 40%;
+   margin-right: 10%;
+   height: 350px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: flex-start;
+ }
+
+ .advertisement .container .advertisement-text-02 h1 {
+   font-family: "Roboto" , sans-serif;
+   font-size: 30px;
+   text-transform: uppercase;
+   color: var(--main-color);
+   line-height: 1.1;
+   letter-spacing: 1px;
+ }
+
+ .advertisement .container .advertisement-text-02 p {
+   font-family: "Open Sans" , sans-serif;
+   font-size: 15px;
+   color: #FFF;
+   line-height: 1.6;
+ }
+
+ .advertisement .container .advertisement-text-02 form input[type = "button"] {
+    margin-top: 15px;
+    color: #FFF;
+    border-bottom: 5px solid #FFF; 
+    font-size: 14px;
+ }
+
+ .advertisement .container .advertisement-text-02 form input[type = "button"]:hover {
+   border-bottom-color: var(--main-color);
+ }
+
+ /* Start For Landscape & Portrait Phones */
+  @media (max-width: 767px) {
+   .advertisement {
+      height: 850px;
+      background-position: 30% 0%;
+   } 
+
+   .advertisement .container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+   }
+
+   .advertisement .container .advertisement-text-01,
+   .advertisement .container .advertisement-text-02 {
+      width: 60%;
+      margin-right: 0;
+   }
+
+   .advertisement .container .advertisement-text-02 {
+     text-align: center;
+    }
+  }
+ /* End For Landscape & Portrait Phones */
+
+ /* Start For Portrait Phones */
+  @media (max-width: 576px) {
+   .advertisement .container .advertisement-text-01 {
+      height: 250px;
+   } 
+
+   .advertisement .container .advertisement-text-01,
+   .advertisement .container .advertisement-text-02 {
+      width: 80%;
+   }  
+
+   .advertisement .container .advertisement-text-01 h1 {
+      font-size: 9vw;
+   }
+  }
+ /* End For Portrait Phones */
+/* End Advertisement */
+
+/* Start Help */
+ .help {
+    padding: var(--section-padding);
+    background-color: var(--main-color);
+    color: #FFF;
+ }
+
+ .help .container {
+    display: flex;
+ }
+
+ .help .container .text-and-form {
+    width: 50%;
+    padding: 20px;
+ }
+
+ .help .container .text-and-form h2 {
+    font-family: "Roboto",sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    line-height: 1.1;
+ }
+
+ .help .container .text-and-form h2 span {
+   font-weight: 800;
+ }
+
+ .help .container .text-and-form .help-form {
+   display: flex;
+   flex-direction: column;
+ }
+
+ .help .container .text-and-form .help-form textarea {
+    resize: none;
+ }
+
+ .help .container .text-and-form .help-form input,
+ .help .container .text-and-form .help-form textarea {
+    margin-bottom: 20px;
+    padding: 8px;
+ }
+
+ .help .container .text-and-form .help-form .submit-btn {
+    width: 110px;
+    height: 40px;
+    background-color: transparent;
+    border: 1px solid #FFF;
+    cursor: pointer;
+    color: #FFF;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    border-radius: 2px;
+}
+
+ .help .container .text-and-social {
+    width: 50%;
+    padding: 20px;
+ }
+
+ .help .container .text-and-social h2 {
+    text-transform: uppercase;
+    font-family: "Roboto",sans-serif;
+    font-size: 25px;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    padding-left: 30px;
+ }
+
+ .help .container .text-and-social .help-icons {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   padding-left: 30px;
+ }
+
+ .help .container .text-and-social .help-icons i {
+    font-size: 50px;
+    margin-bottom: 30px;
+}
+
+/* Start For Landscape & Portrait Phones */
+ @media (max-width: 767px) {
+   .help .container {
+      flex-direction: column;
+   }
+
+   .help .container .text-and-form,
+   .help .container .text-and-social {
+      width: 100%;
+      text-align: center;
+   }
+
+   .help .container .text-and-form .help-form input,
+   .help .container .text-and-form .help-form textarea {
+     width: 85%;
+     margin: 15px auto;
+ }
+
+ .help .container .text-and-social .help-icons {
+    padding-left: 0px;
+  }
+ }
+/* End For Landscape & Portrait Phones */
+
+
+ /* Start So That the text-and-social div Fits Very Small Width Screens */
+  @media (max-width: 310px) {
+   .help .container .text-and-social h2 {
+      font-size: 22px;
+      padding: 10px;
+      text-align: center;
+   }
+
+   .help .container .text-and-social .help-icons {
+      padding: 10px;
+    }
+
+    .help .container .text-and-social .help-icons i {
+      font-size: 40px;
+  }
+ }
+ /* End So That the text-and-social div Fits Very Small Width Screens */
+/* End Help */
+
+/* Start Footer */
+ footer {
+    padding: var(--section-padding);
+    background-color: #333;
+    color: #FFF;
+ }
+
+ footer .container p {
+    font-family: "Roboto",sans-serif;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-align: center;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+ }
+
+ /* Start For Landscape & Portrait Phones */
+  @media (max-width: 767px) {
+   footer .container p {
+      width: 100%;
+   }
+  }
+ /* End For Landscape & Portrait Phones */
+
+ /* Start So That The First Line Of Footer Suits Very Small Width Screens */
+  @media (max-width: 261px) {
+    footer .container p {
+      font-size: 5vw;
+    } 
+  }
+ /* End So That The First Line Of Footer Suits Very Small Width Screens */
+/* End Footer */
